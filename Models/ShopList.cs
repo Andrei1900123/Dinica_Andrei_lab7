@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
+
 
 namespace Dinica_Andrei_lab7.Models
 {
@@ -14,6 +16,10 @@ namespace Dinica_Andrei_lab7.Models
         [MaxLength(250)]
         public string Description { get; set; }
         public DateTime Date { get; set; }
+        
+        [ForeignKey(typeof(Shop))]
+        public int ShopID { get; set; }
+
     }
 
 }
